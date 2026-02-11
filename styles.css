@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap");
+
+:root {
+
+  --section-bg: rgba(224, 198, 255, 0.18);
+
+  /* === WEDDING COLORS === */
+  --purple-main: #E0C6FF;
+  --purple-soft: #F3E9FF;
+  --purple-deep: #C8A9F4;
+
+  --green-main: #2B6948;
+  --green-soft: #3F8A63;
+
+  /* === NEUTRALS === */
+  --text-dark: #2B1E36;
+  --text-light: #FFFFFF;
+
+  --background-main: #F8F2FF;
+  --surface: rgba(255, 255, 255, 0.85);
+
+  --radius: 20px;
+  --shadow-soft: 0 18px 40px rgba(43, 30, 54, 0.15);
+
+  /* HERO OVERLAY */
+  --hero-overlay-top: rgba(224, 198, 255, 0.35);
+  --hero-overlay-bottom: rgba(43, 105, 72, 0.45);
+
+}
+
+
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, var(--background-main) 0%, #ffffff 100%);
+}
+
+
+
+
+a {
+  color: var(--green-main);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+
+  background: rgba(224, 198, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--green-main);
+}
+
+nav a {
+  color: var(--green-main);
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--purple-deep);
+}
+
+
+/* HERO */
+.hero {
+  min-height: 55vh;
+  padding: 6rem 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image:
+    linear-gradient(var(--hero-overlay-top), var(--hero-overlay-bottom)),
+    url("hero.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* Only the hero text (nothing else on the site) */
+.hero .names {
+  color: #E0C6FF;  /* Your wedding lavender */
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+}
+
+.hero .subtitle {
+  color: rgba(224, 198, 255, 0.85);
+  letter-spacing: 3px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+.names {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.hero-content {
+  animation: fadeUp 1.2s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 45vh; padding: 4rem 1.5rem; }
+}
+
+/* SECTION HEADER */
+.section-header {
+  text-align: center;
+  padding: 0 1rem;
+  margin: 0 auto 3.5rem;
+  max-width: 650px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.section-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* THE DAY SECTION */
+.locations-section {
+  background: var(--section-bg);
+  padding: 5rem 4rem;
+}
+
+/* This is what makes it feel "full-width" without being chaotic */
+.locations-day-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* 3 equal columns, same height, aligned */
+.day-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* Unified panel styling: NO borders */
+.day-image,
+.day-map,
+.timetable {
+  background: var(--purple-main);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  min-height: 320px;
+}
+
+
+
+/* IMAGE */
+.day-image {
+  padding: 0;
+  overflow: hidden;
+}
+.day-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* MAP */
+.day-map {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-map h3 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+.day-map iframe {
+  width: 100%;
+  flex: 1;
+  border: 0;
+  min-height: 220px;
+  margin-bottom: 0.75rem;
+}
+
+/* TIMETABLE */
+.timetable {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.timetable h4 {
+  margin: 0 0 1.5rem;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  /* center text */
+  text-align: center;
+}
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.timeline li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1.25rem;
+  padding: 0.6rem 0;
+  font-size: 1.2rem;
+}
+.time { font-weight: 600; }
+.event { line-height: 1.4; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .locations-section { padding: 4rem 2rem; }
+  .day-row { grid-template-columns: 1fr; gap: 2rem; }
+  .day-image, .day-map, .timetable { min-height: auto; }
+  .day-map iframe { min-height: 240px; }
+}
+
+.form-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-wrapper iframe {
+  width: 100%;
+  height: 900px;
+  border: 0;
+}
+
+.form-wrapper {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+}
+
+.story-container {
+  text-align: center;
+}
+
+.story-text {
+  max-width: 520px;
+  margin: 2rem auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.qr-wrapper {
+  display: inline-block;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.divider {
+  width: 100px;
+  height: 3px;
+  margin: 1.5rem auto;
+  background: var(--green-main);
+}
+
+
+.qr-wrapper img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+.story-hint {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.decorated {
+  position: relative;
+  padding: 4rem 3rem;
+  margin-bottom: 4rem;
+}
+
+.vine-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorated .day-row {
+  position: relative;
+  z-index: 1;
+}
+
+h2, h3, h4 {
+  color: var(--green-main);
+}
+
+/* Big titles on inner pages (not hero) */
+.story-container .names {
+  color: #2B6948;  /* your wedding green */
+}
+
+/* Luxury rhythm */
+body {
+  line-height: 1.6;
+}
+
+.locations-section {
+  padding: 6.5rem 4rem;
+}
+
+@media (max-width: 1100px) {
+  .locations-section {
+    padding: 4.5rem 1.5rem;
+  }
+}
+.section-header {
+  text-align: center;
+  padding: 0 1rem;
+  margin: 0 auto 4.25rem;
+  max-width: 720px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.section-header p {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: rgba(43, 30, 54, 0.70);
+  text-transform: uppercase;
+}
+.day-image,
+.day-map,
+.timetable {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  min-height: 320px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.decorated:hover .day-image,
+.decorated:hover .day-map,
+.decorated:hover .timetable {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(43, 30, 54, 0.18);
+}
+.timetable h4 {
+  margin: 0 0 1.25rem;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--green-main);
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 1.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(43, 105, 72, 0.12);
+  font-size: 1.05rem;
+}
+
+.timeline li:last-child {
+  border-bottom: none;
+}
+
+.time {
+  font-weight: 600;
+  color: rgba(43, 30, 54, 0.85);
+}
+
+.event {
+  line-height: 1.45;
+  color: rgba(43, 30, 54, 0.85);
+}
+.decorated {
+  position: relative;
+  padding: 4.75rem 3.25rem;
+  margin-bottom: 4.5rem;
+  border-radius: calc(var(--radius) + 6px);
+  background: rgba(224, 198, 255, 0.16);
+}
+
+@media (max-width: 1100px) {
+  .decorated {
+    padding: 3rem 1.25rem;
+  }
+}
+.hero {
+  position: relative;
+  border-bottom: 1px solid rgba(43, 105, 72, 0.25);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    var(--background-main) 100%
+  );
+
+  pointer-events: none;
+}
