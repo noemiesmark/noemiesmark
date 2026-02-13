@@ -62,30 +62,27 @@ nav {
   top: 0;
   z-index: 50;
 
-  padding: 1.2rem 2rem;
+  padding: 1.4rem 2rem;
+
   display: flex;
   justify-content: center;
-  gap: 2rem;
-
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
+  gap: 2.5rem;
 
   background: rgba(224, 198, 255, 0.6);
   backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--green-main);
+
+  font-size: 1rem;          /* bigger */
+  letter-spacing: 2.5px;    /* elegant spacing */
+  text-transform: uppercase;
 }
 
 nav a {
-  color: var(--green-main);
-  font-weight: 500;
-  position: relative;
-  transition: all 0.3s ease;
+  color: #000000;
+  font-weight: 600;         /* stronger presence */
+  transition: all 0.25s ease;
 }
 
-nav a:hover {
-  color: var(--purple-deep);
-}
 
 
 /* HERO */
