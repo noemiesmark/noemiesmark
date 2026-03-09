@@ -462,3 +462,79 @@ body {
 
   pointer-events: none;
 }
+
+/* Guide bubble pointing guests to the RSVP tab */
+.nav-guide {
+  position: fixed;
+  top: 88px;
+  right: 120px;
+  z-index: 120;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  max-width: 320px;
+  padding: 1rem 1.1rem;
+
+  background: rgba(224, 198, 255, 0.95);
+  color: #2B1E36;
+  border: 1.5px solid rgba(43, 105, 72, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(43, 30, 54, 0.16);
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.nav-guide::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 72px;
+
+  width: 18px;
+  height: 18px;
+  background: rgba(224, 198, 255, 0.95);
+
+  border-top: 1.5px solid rgba(43, 105, 72, 0.35);
+  border-left: 1.5px solid rgba(43, 105, 72, 0.35);
+
+  transform: rotate(45deg);
+}
+
+.nav-guide strong {
+  color: #2B6948;
+}
+
+.nav-guide-text {
+  flex: 1;
+}
+
+.nav-guide-close {
+  border: none;
+  background: transparent;
+  color: #2B6948;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-guide-close:hover {
+  opacity: 0.75;
+}
+
+/* Mobile-friendly placement */
+@media (max-width: 900px) {
+  .nav-guide {
+    top: 88px;
+    right: 20px;
+    left: 20px;
+    max-width: none;
+  }
+
+  .nav-guide::after {
+    right: 42px;
+  }
+}
