@@ -7,14 +7,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<script>
+  const closeNavGuide = document.getElementById("closeNavGuide");
+  const navGuide = document.getElementById("navGuide");
 
+  closeNavGuide.addEventListener("click", function () {
+    navGuide.style.display = "none";
+  });
+</script>
+    
 <body>
 
+    <div class="nav-guide" id="navGuide">
+  <div class="nav-guide-text">
+    Kérünk, a <strong>Visszajelzések</strong> fülön jelezd nekünk, hogy szükséged van-e transzferre Zsámbékról. 💜
+  </div>
+  <button class="nav-guide-close" id="closeNavGuide" aria-label="Bezárás">
+    ×
+  </button>
+</div>
+    
 <nav>
   <a href="index.html">Kezdőlap</a>
   <a href="rolunk.html">Rólunk</a>
   <a href="pictures.html">Képek</a>
   <a href="registry.html">Visszajelzések</a>
+    
 </nav>
 
 
